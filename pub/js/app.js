@@ -3,17 +3,17 @@
 // libraries
 var P = require('pixi.js')
 var _ = require('lodash')
-var Combokeys = require('combokeys')
-var combokeys = new Combokeys(document)
-var Howl = require('howler').Howl
-var attachFastClick = require('fastclick')
-attachFastClick(document.body)
+//var Combokeys = require('combokeys')
+//var combokeys = new Combokeys(document)
+//var Howl = require('howler').Howl
+//var attachFastClick = require('fastclick')
+//attachFastClick(document.body)
 
 // constants
 var R = window.devicePixelRatio
-var CANVAS_X = 200*R
-var CANVAS_Y = 200*R
-var GRID_UNIT = 16*R
+var CANVAS_X = 400
+var CANVAS_Y = 400
+var GRID_UNIT = 16
 
 // stage variables
 var stage, renderer
@@ -36,3 +36,10 @@ demoSprite.position.y = 100
 
 stage.addChild(demoSprite)
 console.log("WTF")
+
+// the rendering loop
+requestAnimationFrame(update)
+function update() {
+  requestAnimationFrame(update)
+  renderer.render(stage)
+}
