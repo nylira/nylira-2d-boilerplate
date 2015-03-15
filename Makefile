@@ -4,6 +4,7 @@ stylus =  ./node_modules/stylus/bin/stylus
 nib = ./node_modules/nib/
 uglify = ./node_modules/uglify-js/bin/uglifyjs
 
+default: js css
 
 js:
 	 $(browserify) pub/js/app.js -d -o | $(uglify) > pub/js/bundle.js
@@ -13,9 +14,7 @@ wjs:
 
 css:
 	mkdir -p pub/css
-	$(stylus) --compress -u $(nib) src/styl/screen.styl -o pub/css/
+	$(stylus) --compress -u $(nib) src/stylesheets/screen.styl -o pub/css/
 
 wcss:
-	$(stylus) --watch --line-numbers src/styl/screen.styl -u $(nib) -o pub/css/
-
-all: js css
+	$(stylus) --watch --line-numbers src/stylesheets/screen.styl -u $(nib) -o pub/css/

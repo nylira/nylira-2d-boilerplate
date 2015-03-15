@@ -1,45 +1,54 @@
+(function() {
 'use strict'
 
-// libraries
+//==============================================================================
+// Modules
+
 var P = require('pixi.js')
-var _ = require('lodash')
-//var Combokeys = require('combokeys')
-//var combokeys = new Combokeys(document)
-//var Howl = require('howler').Howl
-//var attachFastClick = require('fastclick')
-//attachFastClick(document.body)
+var maximize = require('nylira-maximize')
 
-// constants
-var R = window.devicePixelRatio
-var CANVAS_X = 400
-var CANVAS_Y = 400
-var GRID_UNIT = 16
+//==============================================================================
+// Variables
 
-// stage variables
-var stage, renderer
-
-// scenes
-var sceneMenu
-var sceneGame
-var sceneSummary
-
-// setup stage
-stage = new P.Stage(0xFFFFFF)
-renderer = P.autoDetectRenderer(CANVAS_X, CANVAS_Y)
-document.getElementById('container').appendChild(renderer.view)
-
-// it works!
-var demoTexture = new P.Texture.fromImage('../img/block16x16red.png')
-var demoSprite = new P.Sprite(demoTexture)
-demoSprite.position.x = 100
-demoSprite.position.y = 100
-
-stage.addChild(demoSprite)
-console.log("WTF")
-
-// the rendering loop
-requestAnimationFrame(update)
-function update() {
-  requestAnimationFrame(update)
-  renderer.render(stage)
+var GAME = {
+  w: 2880
+, h: 1000
+, id: document.getElementById('gameCanvas')
 }
+var SCENES = {}
+
+//==============================================================================
+// Setup
+
+function renderTest(scene) {
+  var bar = new P.Graphics()
+  bar.beginFill(0xFF0000)
+  bar.lineStyle(2, 0x000000)
+  bar.drawRect(200, 200, 200, 200)
+  bar.endFill()
+  scene.addChild(bar)
+}
+
+function setup() {
+  GAME.renderer = P.autoDetectRenderer(GAME.w, GAME.h, {view: GAME.id})
+  SCENES.primary = new P.Container({width: GAME.w, height: GAME.h})
+  maximize(GAME.id, GAME.w, GAME.h)
+
+  renderTest(SCENES.primary)
+}
+
+//==============================================================================
+// Loop
+
+function gameLoop() {
+  requestAnimationFrame(gameLoop)
+  GAME.renderer.render(SCENES.primary)
+}
+
+//==============================================================================
+// Go
+
+setup()
+gameLoop()
+
+}())
