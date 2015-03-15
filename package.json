@@ -1,6 +1,6 @@
 {
-  "name": "js-game-boilerplate",
-  "version": "0.0.1",
+  "name": "nylira-2d-boilerplate",
+  "version": "1.0.1",
   "description": "A description of a game.",
   "main": "server.js",
   "dependencies": {
@@ -9,6 +9,7 @@
     "koa-router": "^4.2.0",
     "koa-static": "^1.4.9",
     "nib": "^1.1.0",
+    "nylira-maximize": "^1.0.5",
     "pixi.js": "^2.2.8",
     "stylus": "^0.50.0",
     "uglify-js": "^2.4.17",
@@ -24,5 +25,5 @@
     "url": "git@91.121.116.55:js-game-boilerplate"
   },
   "author": "Peng Zhong",
-  "license": "Proprietary"
+  "license": "MIT"
 }
