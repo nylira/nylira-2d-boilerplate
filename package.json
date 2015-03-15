@@ -1,16 +1,17 @@
 {
   "name": "nylira-2d-boilerplate",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Boilerplate for a 2D web game, using PIXI.js",
   "main": "server.js",
   "dependencies": {
+    "brfs": "^1.4.0",
     "browserify": "^9.0.3",
     "koa": "^0.18.1",
     "koa-router": "^4.2.0",
     "koa-static": "^1.4.9",
     "nib": "^1.1.0",
     "nylira-maximize": "^1.0.5",
-    "pixi.js": "^2.2.8",
+    "pixi.js": "^3.0.0-rc2",
     "stylus": "^0.50.0",
     "uglify-js": "^2.4.17",
     "watchify": "^2.4.0"
