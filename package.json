@@ -1,6 +1,6 @@
 {
   "name": "nylira-2d-boilerplate",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Boilerplate for a 2D web game, using PIXI.js",
   "main": "server.js",
   "dependencies": {
@@ -10,7 +10,7 @@
     "koa-router": "^4.2.0",
     "koa-static": "^1.4.9",
     "nib": "^1.1.0",
-    "nylira-maximize": "^1.0.5",
+    "nylira-maximize": "^0.1.6",
     "pixi.js": "^3.0.0-rc2",
     "stylus": "^0.50.0",
     "uglify-js": "^2.4.17",
@@ -23,8 +23,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@91.121.116.55:js-game-boilerplate"
+    "url": "git@github.com:nylira/nylira-2d-boilerplate.git"
   },
   "author": "Peng Zhong",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "2d",
+    "pixi.js",
+    "pixi",
+    "canvas",
+    "webgl",
+    "game"
+  ]
 }
