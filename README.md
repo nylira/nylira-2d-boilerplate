@@ -2,9 +2,10 @@
 
 Boilerplate for a 2D web game, using PIXI.js
 
-## Load it up
+## Set it up
     
     npm install
+    make
     node server.js
 
     // visit http://localhost:1337 in your browser
@@ -13,7 +14,7 @@ Boilerplate for a 2D web game, using PIXI.js
 
 Edit JS:
 
-    vi ./pub/jsapp.js
+    vi ./pub/js/app.js
 
 Edit CSS:
 

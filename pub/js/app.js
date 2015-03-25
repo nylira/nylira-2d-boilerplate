@@ -4,15 +4,15 @@
 //==============================================================================
 // Modules
 
-var P = require('pixi.js')
+var PIXI = require('pixi.js')
 var maximize = require('nylira-maximize')
 
 //==============================================================================
 // Variables
 
 var GAME = {
-  w: 2880
-, h: 1000
+  w: 1920
+, h: 1080
 , id: document.getElementById('gameCanvas')
 }
 var SCENES = {}
@@ -21,7 +21,7 @@ var SCENES = {}
 // Setup
 
 function renderTest(scene) {
-  var bar = new P.Graphics()
+  var bar = new PIXI.Graphics()
   bar.beginFill(0xFF0000)
   bar.lineStyle(2, 0x000000)
   bar.drawRect(200, 200, 200, 200)
@@ -30,8 +30,8 @@ function renderTest(scene) {
 }
 
 function setup() {
-  GAME.renderer = P.autoDetectRenderer(GAME.w, GAME.h, {view: GAME.id})
-  SCENES.primary = new P.Container({width: GAME.w, height: GAME.h})
+  GAME.renderer = PIXI.autoDetectRenderer(GAME.w, GAME.h, {view: GAME.id})
+  SCENES.primary = new PIXI.Container({width: GAME.w, height: GAME.h})
   maximize(GAME.id, GAME.w, GAME.h)
 
   renderTest(SCENES.primary)
@@ -40,9 +40,26 @@ function setup() {
 //==============================================================================
 // Loop
 
+function update(dt) {
+  // do your lerping here
+  // console.log('deltaTime', dt)
+  return dt
+}
+
+var time
 function gameLoop() {
-  requestAnimationFrame(gameLoop)
+  var now = new Date().getTime()
+  var dt = now - (time || now)
+  dt = dt / 1000 // change units to seconds
+
+  time = now
+
+  // do stuff every frame
+  update(dt)
+
   GAME.renderer.render(SCENES.primary)
+
+  requestAnimationFrame(gameLoop)
 }
 
 //==============================================================================
