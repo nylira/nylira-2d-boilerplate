@@ -25,7 +25,7 @@ var TEXTURES = {
 // Setup
 
 function renderGrass(scene) {
-  var grass = new PIXI.TilingSprite(TEXTURES.grass)
+  var grass = new PIXI.extras.TilingSprite(TEXTURES.grass)
   grass.width = GAME.w
   grass.height = GAME.h
   scene.addChild(grass)
@@ -33,7 +33,7 @@ function renderGrass(scene) {
 
 function renderTest(scene) {
   var bar = new PIXI.Graphics()
-  bar.beginFill(0x00FF00)
+  bar.beginFill(0x88CC88)
   bar.lineStyle(2, 0x000000)
   bar.drawRect(200, 200, 200, 200)
   bar.endFill()
