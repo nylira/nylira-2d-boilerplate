@@ -17,12 +17,23 @@ var GAME = {
 }
 var SCENES = {}
 
+var TEXTURES = {
+  grass: new PIXI.Texture.fromImage('./img/texture_grass_02.png')
+}
+
 //==============================================================================
 // Setup
 
+function renderGrass(scene) {
+  var grass = new PIXI.TilingSprite(TEXTURES.grass)
+  grass.width = GAME.w
+  grass.height = GAME.h
+  scene.addChild(grass)
+}
+
 function renderTest(scene) {
   var bar = new PIXI.Graphics()
-  bar.beginFill(0xFF0000)
+  bar.beginFill(0x00FF00)
   bar.lineStyle(2, 0x000000)
   bar.drawRect(200, 200, 200, 200)
   bar.endFill()
@@ -34,6 +45,7 @@ function setup() {
   SCENES.primary = new PIXI.Container({width: GAME.w, height: GAME.h})
   maximize(GAME.id, GAME.w, GAME.h)
 
+  renderGrass(SCENES.primary)
   renderTest(SCENES.primary)
 }
 
