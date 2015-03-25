@@ -1,6 +1,6 @@
 {
   "name": "nylira-2d-boilerplate",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Boilerplate for a 2D web game, using PIXI.js",
   "main": "server.js",
   "dependencies": {
