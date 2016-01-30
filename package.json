@@ -4,16 +4,16 @@
   "description": "Boilerplate for a 2D web game, using PIXI.js",
   "main": "server.js",
   "dependencies": {
-    "browserify": "^9.0.4",
-    "koa": "^0.18.1",
-    "koa-router": "^4.3.0",
-    "koa-static": "^1.4.9",
+    "browserify": "^13.0.0",
+    "koa": "^1.1.2",
+    "koa-router": "^5.3.0",
+    "koa-static": "^2.0.0",
     "nib": "^1.1.0",
     "nylira-maximize": "^0.1.6",
-    "pixi.js": "^3.0.0-rc4",
-    "stylus": "^0.50.0",
-    "uglify-js": "^2.4.19",
-    "watchify": "^3.1.0"
+    "pixi.js": "^3.0.9",
+    "stylus": "^0.53.0",
+    "uglify-js": "^2.6.1",
+    "watchify": "^3.7.0"
   },
   "devDependencies": {},
   "scripts": {
